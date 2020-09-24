@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67A5B77F251C64D800022B40 /* sio_socket.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE2958621ACE2CD6000ABD30 /* sio_socket.cpp */; };
+		67A5B780251C64D800022B40 /* sio_packet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE1D319E1AD5087800895150 /* sio_packet.cpp */; };
+		67A5B781251C64D800022B40 /* sio_client_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE2958671ACE442F000ABD30 /* sio_client_impl.cpp */; };
+		67A5B782251C64D800022B40 /* sio_client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE3B3E871ACA5446003CEB94 /* sio_client.cpp */; };
+		67A5B786251C64D800022B40 /* sio_message.h in Headers */ = {isa = PBXBuildFile; fileRef = CE3B3E891ACA5446003CEB94 /* sio_message.h */; };
+		67A5B787251C64D800022B40 /* sio_packet.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1D319F1AD5087800895150 /* sio_packet.h */; };
+		67A5B788251C64D800022B40 /* sio_client.h in Headers */ = {isa = PBXBuildFile; fileRef = CE3B3E881ACA5446003CEB94 /* sio_client.h */; };
 		CE1D31A01AD5087800895150 /* sio_packet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE1D319E1AD5087800895150 /* sio_packet.cpp */; };
 		CE1D31A11AD5087800895150 /* sio_packet.h in Headers */ = {isa = PBXBuildFile; fileRef = CE1D319F1AD5087800895150 /* sio_packet.h */; };
 		CE2958691ACE4589000ABD30 /* sio_client_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE2958671ACE442F000ABD30 /* sio_client_impl.cpp */; };
@@ -50,6 +57,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		67A5B784251C64D800022B40 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE3B3B681AC8F438003CEB94 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,6 +78,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		67A5B78C251C64D800022B40 /* libsioclient_tls.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libsioclient_tls.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1D319E1AD5087800895150 /* sio_packet.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sio_packet.cpp; sourceTree = "<group>"; };
 		CE1D319F1AD5087800895150 /* sio_packet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sio_packet.h; sourceTree = "<group>"; };
 		CE2958621ACE2CD6000ABD30 /* sio_socket.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sio_socket.cpp; sourceTree = "<group>"; };
@@ -90,6 +107,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		67A5B783251C64D800022B40 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE3B3B371AC8F365003CEB94 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,6 +177,7 @@
 				CE3B3B531AC8F365003CEB94 /* SioChatDemoTests.xctest */,
 				CE3B3B6A1AC8F438003CEB94 /* libsioclient.a */,
 				CE3B3B741AC8F438003CEB94 /* sioclientTests.xctest */,
+				67A5B78C251C64D800022B40 /* libsioclient_tls.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +263,16 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		67A5B785251C64D800022B40 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67A5B786251C64D800022B40 /* sio_message.h in Headers */,
+				67A5B787251C64D800022B40 /* sio_packet.h in Headers */,
+				67A5B788251C64D800022B40 /* sio_client.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE3B3E681AC8F511003CEB94 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -251,6 +286,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		67A5B77D251C64D800022B40 /* sioclient_tls */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 67A5B789251C64D800022B40 /* Build configuration list for PBXNativeTarget "sioclient_tls" */;
+			buildPhases = (
+				67A5B77E251C64D800022B40 /* Sources */,
+				67A5B783251C64D800022B40 /* Frameworks */,
+				67A5B784251C64D800022B40 /* CopyFiles */,
+				67A5B785251C64D800022B40 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = sioclient_tls;
+			productName = sioclient;
+			productReference = 67A5B78C251C64D800022B40 /* libsioclient_tls.a */;
+			productType = "com.apple.product-type.library.static";
+		};
 		CE3B3B391AC8F365003CEB94 /* SioChatDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE3B3B5D1AC8F365003CEB94 /* Build configuration list for PBXNativeTarget "SioChatDemo" */;
@@ -368,6 +421,7 @@
 				CE3B3B521AC8F365003CEB94 /* SioChatDemoTests */,
 				CE3B3B691AC8F438003CEB94 /* sioclient */,
 				CE3B3B731AC8F438003CEB94 /* sioclientTests */,
+				67A5B77D251C64D800022B40 /* sioclient_tls */,
 			);
 		};
 /* End PBXProject section */
@@ -400,6 +454,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		67A5B77E251C64D800022B40 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67A5B77F251C64D800022B40 /* sio_socket.cpp in Sources */,
+				67A5B780251C64D800022B40 /* sio_packet.cpp in Sources */,
+				67A5B781251C64D800022B40 /* sio_client_impl.cpp in Sources */,
+				67A5B782251C64D800022B40 /* sio_client.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE3B3B361AC8F365003CEB94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -468,6 +533,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		67A5B78A251C64D800022B40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"SIO_TLS=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SIOROOT)/lib/websocketpp",
+					"$(SIOROOT)/lib/rapidjson/include",
+					"$(SRCROOT)/boost/ios/prefix/include",
+					"$(SRCROOT)/../../../../OpenSSL-for-iPhone/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/boost/ios/build/$(CURRENT_ARCH)/",
+					"$(SRCROOT)/../../../../OpenSSL-for-iPhone/lib",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LIBTOOLFLAGS = "-lboost_random -lboost_date_time -lboost_system -lcrypto -lssl";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SIOROOT = "$(SRCROOT)/../../../";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		67A5B78B251C64D800022B40 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = "SIO_TLS=1";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SIOROOT)/lib/websocketpp",
+					"$(SIOROOT)/lib/rapidjson/include",
+					"$(SRCROOT)/boost/ios/prefix/include",
+					"$(SRCROOT)/../../../../OpenSSL-for-iPhone/include",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(SRCROOT)/boost/ios/build/$(CURRENT_ARCH)/",
+					"$(SRCROOT)/../../../../OpenSSL-for-iPhone/lib",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LIBTOOLFLAGS = "-lboost_random -lboost_date_time -lboost_system -lcrypto -lssl";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SIOROOT = "$(SRCROOT)/../../../";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 		CE3B3B5B1AC8F365003CEB94 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -685,6 +806,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		67A5B789251C64D800022B40 /* Build configuration list for PBXNativeTarget "sioclient_tls" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67A5B78A251C64D800022B40 /* Debug */,
+				67A5B78B251C64D800022B40 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CE3B3B351AC8F365003CEB94 /* Build configuration list for PBXProject "SioChatDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
