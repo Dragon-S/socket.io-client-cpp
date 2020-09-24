@@ -280,7 +280,8 @@ void OnClose(CFTypeRef ctrl,sio::client::close_reason const& reason)
 
 - (IBAction)onSend:(id)sender {
     if ([_messageField.text length]>0 && [_name length]>0) {
-        _io->socket()->emit("new message",[_messageField.text UTF8String]);
+        sio::message::ptr param = sio::string_message::create([_messageField.text UTF8String]);
+        _io->socket()->emit("new message", param);
         MessageItem *item = [[MessageItem alloc] init];
         
         item.flag = Message_You;
@@ -296,7 +297,8 @@ void OnClose(CFTypeRef ctrl,sio::client::close_reason const& reason)
 
 -(void)onConnected
 {
-    _io->socket()->emit("add user", [self.nickName.text UTF8String]);
+    sio::message::ptr param = sio::string_message::create([self.nickName.text UTF8String]);
+    _io->socket()->emit("add user", param);
 }
 
 -(void)onDisconnected
@@ -341,7 +343,8 @@ void OnClose(CFTypeRef ctrl,sio::client::close_reason const& reason)
 -(void) inputTimeout
 {
     _inputTimer = nil;
-    _io->socket()->emit("stop typing", "");
+    sio::message::ptr param = sio::string_message::create("");
+    _io->socket()->emit("stop typing", param);
 }
 
 -(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -354,7 +357,8 @@ void OnClose(CFTypeRef ctrl,sio::client::close_reason const& reason)
         }
         else
         {
-            _io->socket()->emit("typing", "");
+            sio::message::ptr param = sio::string_message::create("");
+            _io->socket()->emit("typing", param);
             _inputTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(inputTimeout) userInfo:nil repeats:NO];
         }
     }

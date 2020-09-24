@@ -42,8 +42,8 @@
 : ${OSXFRAMEWORKDIR:=`pwd`/osx/framework}
 : ${COMPILER:="clang++"}
 
-: ${BOOST_VERSION:=1.55.0}
-: ${BOOST_VERSION2:=1_55_0}
+: ${BOOST_VERSION:=1.68.0}
+: ${BOOST_VERSION2:=1_68_0}
 
 BOOST_TARBALL=$TARBALLDIR/boost_$BOOST_VERSION2.tar.bz2
 BOOST_SRC=$SRCDIR/boost_${BOOST_VERSION2}
@@ -125,7 +125,7 @@ unpackBoost()
 
 restoreBoost()
 {
-    cp $BOOST_SRC/tools/build/v2/user-config.jam-bk $BOOST_SRC/tools/build/v2/user-config.jam
+    cp $BOOST_SRC/project-config.jam-bk $BOOST_SRC/project-config.jam
 }
 
 #===============================================================================
@@ -134,9 +134,9 @@ updateBoost()
 {
     echo Updating boost into $BOOST_SRC...
 
-    cp $BOOST_SRC/tools/build/v2/user-config.jam $BOOST_SRC/tools/build/v2/user-config.jam-bk
+    cp $BOOST_SRC/project-config.jam  $BOOST_SRC/project-config.jam-bk
 
-    cat >> $BOOST_SRC/tools/build/v2/user-config.jam <<EOF
+    cat >> $BOOST_SRC/project-config.jam <<EOF
 using darwin : ${IPHONE_SDKVERSION}~iphone
 : $XCODE_ROOT/Toolchains/XcodeDefault.xctoolchain/usr/bin/$COMPILER -arch armv6 -arch armv7 -arch armv7s -arch arm64 -fvisibility=hidden -fvisibility-inlines-hidden $EXTRA_CPPFLAGS
 : <striper> <root>$XCODE_ROOT/Platforms/iPhoneOS.platform/Developer
