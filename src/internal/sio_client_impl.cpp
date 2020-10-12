@@ -475,6 +475,9 @@ namespace sio
             it = values->find("pingInterval");
             if (it!= values->end()&&it->second->get_flag() == message::flag_integer) {
                 m_ping_interval = (unsigned)static_pointer_cast<int_message>(it->second)->get_int();
+                if (m_ping_interval > 2000) {
+                    m_ping_interval = 2000;
+                }
             }
             else
             {
@@ -484,6 +487,9 @@ namespace sio
 
             if (it!=values->end()&&it->second->get_flag() == message::flag_integer) {
                 m_ping_timeout = (unsigned) static_pointer_cast<int_message>(it->second)->get_int();
+                if (m_ping_timeout > 2000) {
+                    m_ping_timeout = 2000;
+                }
             }
             else
             {

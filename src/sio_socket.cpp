@@ -292,7 +292,7 @@ namespace sio
                 m_connection_timer.reset(new boost::asio::deadline_timer(m_client->get_io_service()));
             }
             boost::system::error_code ec;
-            m_connection_timer->expires_from_now(boost::posix_time::milliseconds(3000), ec);
+            m_connection_timer->expires_from_now(boost::posix_time::milliseconds(1000), ec);
             m_connection_timer->async_wait(lib::bind(&socket::impl::on_close, this));
         }
     }
