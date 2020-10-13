@@ -555,6 +555,7 @@
 					"$(SRCROOT)/boost/ios/build/$(CURRENT_ARCH)/",
 					"$(SRCROOT)/../../../../OpenSSL-for-iPhone/lib",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = "-lboost_random -lboost_date_time -lboost_system -lcrypto -lssl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -568,6 +569,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ENABLE_BITCODE = NO;
+				EXCLUDED_ARCHS = "";
 				GCC_PREPROCESSOR_DEFINITIONS = "SIO_TLS=1";
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,6 +583,7 @@
 					"$(SRCROOT)/boost/ios/build/$(CURRENT_ARCH)/",
 					"$(SRCROOT)/../../../../OpenSSL-for-iPhone/lib",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				OTHER_LIBTOOLFLAGS = "-lboost_random -lboost_date_time -lboost_system -lcrypto -lssl";
 				PRODUCT_NAME = "$(TARGET_NAME)";
